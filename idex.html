@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamera Loan Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Biaya Peminjaman Kamera</h2>
+        <label for="startDate">Tanggal Peminjaman:</label>
+        <input type="date" id="startDate">
+        
+        <label for="endDate">Tanggal Pengembalian:</label>
+        <input type="date" id="endDate">
+        
+        <label for="halfDay">Setengah Hari?</label>
+        <input type="checkbox" id="halfDay">
+        
+        <button onclick="hitungBiaya()">Hitung Biaya</button>
+        
+        <h3 id="hasil">Total Biaya: -</h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
