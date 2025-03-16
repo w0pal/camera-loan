@@ -1,25 +1,22 @@
-function hitungBiaya() {
-    const startDate = new Date(document.getElementById("startDate").value);
-    const endDate = new Date(document.getElementById("endDate").value);
-    const isHalfDay = document.getElementById("halfDay").checked;
+function calculateCost() {
+    let startDate = new Date(document.getElementById("startDate").value);
+    let endDate = new Date(document.getElementById("endDate").value);
 
     if (isNaN(startDate) || isNaN(endDate)) {
         alert("Silakan pilih tanggal peminjaman dan pengembalian!");
         return;
     }
 
-    let totalHari = (endDate - startDate) / (1000 * 60 * 60 * 24);
-    let biaya = 0;
+    let totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)); // Selisih hari
+    let cost = 0;
 
-    if (isHalfDay) {
-        biaya = 7000; // Jika hanya setengah hari
+    if (totalDays === 0) {
+        cost = 7000; // Jika dikembalikan di hari yang sama
+    } else if (totalDays === 1) {
+        cost = 12500; // Jika dikembalikan keesokan harinya
     } else {
-        if (totalHari === 1) {
-            biaya = 12500; // Jika hanya beda 1 hari berturut-turut
-        } else if (totalHari > 1) {
-            biaya = totalHari * 12500;
-        }
+        cost = 12500 + (totalDays - 1) * 12500; // Hari ketiga dan seterusnya
     }
 
-    document.getElementById("hasil").innerText = `Total Biaya: Rp${biaya.toLocaleString()}`;
+    document.getElementById("totalCost").textContent = cost.toLocaleString();
 }
