@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 20px;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
@@ -14,20 +15,25 @@ body {
     margin: auto;
 }
 
-input, button {
-    margin: 10px;
-    padding: 8px;
-    font-size: 16px;
+h1, h2 {
+    color: #333;
 }
 
 button {
-    background-color: #007BFF;
+    background-color: blue;
     color: white;
+    padding: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: darkblue;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
 }
