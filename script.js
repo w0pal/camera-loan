@@ -1,4 +1,4 @@
-function calculateCost() {
+document.getElementById("calculateButton").addEventListener("click", function() {
     let startDate = new Date(document.getElementById("startDate").value);
     let endDate = new Date(document.getElementById("endDate").value);
 
@@ -7,7 +7,12 @@ function calculateCost() {
         return;
     }
 
-    let totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)); // Selisih hari
+    if (endDate < startDate) {
+        alert("Tanggal pengembalian tidak boleh lebih awal dari tanggal peminjaman!");
+        return;
+    }
+
+    let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24)); // Selisih hari
     let cost = 0;
 
     if (totalDays === 0) {
@@ -19,4 +24,4 @@ function calculateCost() {
     }
 
     document.getElementById("totalCost").textContent = cost.toLocaleString();
-}
+});
