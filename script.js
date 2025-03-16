@@ -1,5 +1,13 @@
+console.log("Script JavaScript dimuat!");
+
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("calculateButton").addEventListener("click", calculateCost);
+    let button = document.getElementById("calculateButton");
+    
+    if (button) {
+        button.addEventListener("click", calculateCost);
+    } else {
+        console.error("Element calculateButton tidak ditemukan!");
+    }
 });
 
 function calculateCost() {
